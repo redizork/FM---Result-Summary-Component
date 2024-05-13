@@ -1,0 +1,248 @@
+/* Hanken Grotesk */
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-font: "Hanken Grotesk", sans-serif;
+  --up-gradient: hsl(252, 100%, 67%);
+  --down-gradient: hsl(241, 81%, 54%);
+  --up-circle-gradient: hsla(256, 72%, 46%, 1);
+  --down-circle-gradient: hsla(241, 72%, 46%, 0);
+  --head-color: hsl(241, 100%, 89%);
+  --head-dark-color: hsl(224, 30%, 27%);
+  --big-score-color: hsl(221, 100%, 96%);
+  --small-score-color: hsla(221, 100%, 96%, 0.4);
+  --summary-score-color: hsl(283, 4%, 62%);
+  --btn-color: hsl(224, 30%, 27%);
+
+  --light-red-text: hsl(0, 100%, 67%);
+  --light-red-item: hsla(0, 100%, 67%, 0.07);
+  --orange-text: hsl(39, 100%, 56%);
+  --orange-item: hsla(39, 100%, 56%, 0.07);
+  --green-text: hsl(166, 100%, 37%);
+  --green-item: hsla(166, 100%, 37%, 0.07);
+  --blue-text: hsl(234, 85%, 45%);
+  --blue-item: hsla(234, 85%, 45%, 0.07);
+}
+
+/* Base Style */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  font-family: var(--primary-font);
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Result Component Style */
+
+.result {
+  width: 73.7rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 3rem;
+  box-shadow: 0 4rem 4rem hsla(241, 81%, 54%, 0.1);
+}
+
+.result-box,
+.summary-box {
+  padding: 4rem;
+}
+
+.result-box {
+  background: linear-gradient(var(--up-gradient), var(--down-gradient));
+  text-align: center;
+  border-radius: 3rem;
+}
+
+.result-box h1 {
+  font-size: 2.4rem;
+  color: var(--head-color);
+  margin-bottom: 3rem;
+}
+
+.circle {
+  width: 20rem;
+  height: 20rem;
+  background: linear-gradient(
+    var(--up-circle-gradient),
+    var(--down-circle-gradient)
+  );
+  border-radius: 50%;
+  margin: 0 auto 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.big-score {
+  font-size: 7rem;
+  font-weight: 700;
+  color: var(--big-score-color);
+}
+
+.small-score {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--small-score-color);
+}
+
+.result-info {
+  text-align: center;
+}
+
+.result-info h2 {
+  font-size: 3rem;
+  color: var(--big-score-color);
+  margin-bottom: 1.5rem;
+}
+
+.result-info p {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 130%;
+  color: var(--head-color);
+  padding-inline: 2rem;
+}
+
+.light-red {
+  background-color: var(--light-red-item);
+  color: var(--light-red-text);
+}
+
+.orange {
+  background-color: var(--orange-item);
+  color: var(--orange-text);
+}
+
+.green {
+  background-color: var(--green-item);
+  color: var(--green-text);
+}
+
+.blue {
+  background-color: var(--blue-item);
+  color: var(--blue-text);
+}
+
+.summary-box h3 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--head-dark-color);
+  margin-bottom: 2rem;
+}
+
+.summary-items {
+  display: grid;
+  gap: 1.7rem;
+  margin-bottom: 4.5rem;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem 1.5rem;
+  border-radius: 1rem;
+}
+
+.summary-item,
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.title p {
+  margin-left: -7rem;
+}
+
+.score p {
+  color: var(--summary-score-color);
+}
+
+.score span {
+  color: var(--head-dark-color);
+}
+
+.btn {
+  width: 100%;
+  padding: 1.7rem 0;
+  border-radius: 100px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--big-score-color);
+  background-color: var(--btn-color);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: linear-gradient(var(--up-gradient), var(--down-gradient));
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+  .result {
+    width: 32.5rem;
+    grid-template-columns: 1fr;
+    margin: 0 2rem 2rem;
+  }
+
+  .result-box,
+  .summary-box {
+    padding: 3rem;
+  }
+
+  .result-box {
+    border-radius: 0 0 3rem 3rem;
+  }
+
+  .result-box h1 {
+    font-size: 1.8rem;
+  }
+
+  .circle {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .big-score {
+    font-size: 6rem;
+  }
+
+  .small-score {
+    font-size: 1.6rem;
+  }
+
+  .result-info h2 {
+    font-size: 2.6rem;
+  }
+
+  .result-info p {
+    font-size: 1.6rem;
+    padding-inline: 0.5rem;
+  }
+}
